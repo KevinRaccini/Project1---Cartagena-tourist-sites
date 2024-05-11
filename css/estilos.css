@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');  /* fuente popins sacada de Google Fonts */
+
+:root{    /*seudoclase root para poder acceder a las variables desde cualquier elemento*/
+--padding-container: 100px 0;   /* variable con 100px arriba y 0 hacia los lados */
+--color-title:#001A49;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;   /* pegamos la regla de la fuente poppins sacada de Google Fonts */
+}
+
+/*SECTION HEADER ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+.container{          /*container es el contenedor divisor de la pagina*/
+width: 90%;          /*90% para que el ancho del contenedor no ocupe toda la pantalla*/
+max-width: 1200px;
+margin: 0 auto;
+overflow: hidden;    /*overflow hidden todo lo que salga del contenedor se esconda*/
+padding: var(--padding-container);  /*al tener las variables dentro del root podemos acceder a ellas desde cualquier elemento*/
+}
+
+.hero{
+width: 100%;
+height: 100vh;       /*100vh es 100% del alto de la pantalla*/
+min-height: 600px;   /*altura minima*/
+max-height: 800px;   /*altura maxima*/
+position: relative;  /*relative para que un elemento se posicione relativamente a este contenedor*/
+display: grid;       /*grid para crear 2 filas*/
+grid-template-rows: 100px 1fr;   /*la primera fila tiene 100px mientras que la segunda escoge el contenido sobrante*/
+color: white;
+}
+
+.hero::before{       /*hijo de hero para que el clip - path no tenga problemas con el position fixed*/
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;   /*↓↓↓ se usa para agregar una capa al transparente de la imagen*/
+background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/imagen1.jpg');
+background-size: cover;    /*cover para que la imagen se adapte a la pagina*/
+clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);   /*recorte copiado de Clippy CSS para que funcione como molde de la imagen */
+z-index: -1;    /*-1 para que se vea el texto sobre la imagen*/
+}
+
+/*  nav  */
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;        /*display flex para poner los elementos uno al lado del otro*/
+    align-items: center;  /*center para centrar los elementos*/
+}
+
+.nav__title{
+    font-weight: 300;     /*300 para que tenga un peso de fuente mas delgado*/
+}
+
+.nav__link{
+margin-left: auto;        /*auto para que los elemento se muevan hacia la derecha*/
+padding: 0;               /*0 devido a que las listas por defecto tienen un pading*/
+display: grid;
+grid-auto-flow: column;   /*para que los items se coloquen uno al lado del otro*/
+grid-auto-columns: max-content;  /*para que las columnas miren su maximo contenido*/
+gap: 2em;                 /*espaciado de 2em*/
+}
+
+.nav__items{
+    list-style: none;     /*none para quitar el estilo de lista en los items*/
+}
+
+.nav__links{
+    color: white;
+    text-decoration: none; /*none para quitar el subrrayado en los links*/ 
+}
+
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;      /* pointer para que cuando se pase el cursor por encima se combierta en una mano*/
+    display: none;        /* none para que el menu hamburgesa no se muentre en pc y solo en moviles*/
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+}
+
+.nav__close{
+    display: var(--show, none);  /*icono de cierre que utilizaremos cuando se este adaptando la pagina a dispositivos moviles*/
+}
+
+
+/*  hero container  */
+
+.hero__container{
+    max-width: 800px;   /*para centrar el contenidomediante el contenedor*/
+    --padding-container:0;
+    display: grid;
+    grid-auto-rows: max-content; /*para que el contenido se pegue*/
+    align-content: center;       /*el contenido se centre verticalmente y organizarlo mediante el padding-bottom*/
+    padding-bottom: 70px;
+    gap: 1em;           /*separar un poco el contenido*/
+    text-align: center; /*centrar los textos*/ 
+}
+
+.hero__title{
+    font-size: 3rem;
+    padding-bottom: 15px;
+}
+
+.hero__paragraph{
+    padding-bottom: 40px;
+}
+
+.cta{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #2091f9;
+    border-radius: 30px;
+    justify-self: center;  /*center para que centre en margen*/
+    padding: 13px 30px;    /*"caja de fondo de 13px arriba y abajo, 20px hacia los lados"*/
+}
+
+/*SECTION 1 ABOUT ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+.about{
+    text-align: center;
+}
+
+.about__main{
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto)); /*como los articulos tienen 260px, se crean tantas columnas como sean posibles con ese tamaño*/
+}
+
+.subtitle{
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.about__paragraph{
+    line-height: 1.7;   /*altura del parrafo*/
+}
+
+.about__icons{
+    display: grid;
+    gap: 1em;
+    justify-items: center; /*para centrar los items*/
+    width: 260px;
+    overflow: hidden;      /*lo que sobresalga se oculte*/
+    margin:0 auto;         /*para centrar el contenido*/
+}
+
+.about__icon{
+    width: 40px;
+}
+
+/*SECTION 2 KNOWLEDGE ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+.knowledge{     /*↓↓↓ compiamos el fondo de https://www.magicpattern.design*/
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    overflow: hidden;
+}
+
+.knowledge__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*para que las columnas se repartan equitativamente*/
+}
+
+.knowledge__text{
+    text-align: center;
+    padding-right: 20px;
+    overflow: hidden;
+}
+
+.knowledge__paragraph{
+    padding-bottom: 50px;
+    padding-top: 20px;
+    line-height: 1.7;   /*line-heigt es similar a la sangria de word*/
+}
+
+.knowledge__picture{
+    width: 500px;
+    margin-left: 60px;
+}
+
+.knowledge__img{   /*como este es un hijo de knowledge__picture al colocar el width al 100% se adapta a su padre*/
+    width: 100%;
+    display: block;
+}
+
+/*SECTION 3 PRICE ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+.price{
+    text-align: center;
+}
+
+.price__table{
+    display: flex;
+    gap: 2.5em;      /*espacio con dispay flex*/
+    flex-wrap: wrap;
+    justify-content: space-evenly; /*espaciado quitativo hacia todas las esquinas*/
+    align-items: center;           /*para centrar verticalmente*/
+}
+
+.price__element{
+background-color: #e5e5f7;
+text-align: center;
+border-radius: 10px;
+width: 330px;
+padding: 40px;
+--color-plan:#696871;
+--color-price:#1d293f;
+--bg-cta:#fff;
+--color-items:#696871;
+}
+
+.price__name{
+    color:var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 500;
+    
+}
+
+.plan__price{
+    font-size: 2.5rem;          /*tamaño de la letra*/
+    color: var(--color-price);
+}
+
+.price__items{
+margin-top: 35px;
+display: grid;
+gap: 1em;
+font-weight: 300;
+font-size: 1.2rem;
+margin-bottom: 50px;
+color:var(--color-items);
+}
+
+.price__cta{
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    padding: 15px 60px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 5);
+}
+
+/*SECTION 4 Testimony ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+.testimony{
+    background-color: #e5e5f7;
+}
+
+.testimony__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.testimony__body{
+    display: grid;                     /*grid me permite crear columnas*/
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;    /*para que se vallan a las esquinas*/
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;     /*comienza en la segunda linea de columnas y termina en la tercera*/ /*SE SOBREPONEN LOS ELEMENTOS*/
+    grid-row: 1/2;        /*comienaza en la primera linea de filas y temina en la segunda*/
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimony__body--show{   /*↓↓↓ despues de que esten los testimonio uno encima del otro se utilizan estas lineas de codigo para que muestre la primera*/
+opacity: 1;
+pointer-events: unset;
+transition: opacity 1.3s ease-in-out; /*animacion de cambio*/
+}
+
+.testimony__texts{
+    max-width: 700px;    /*para que el texto no rebace este ancho*/
+}
+
+.testimony__course{
+    background-color: royalblue;
+    color: white;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.testimony__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;   /*arregla la imagen (se redimenciona para ajustarse a su contenedor) ???*/
+}
+
+.testimony_img3{         /*clase solo para ubicar de manera correcta la imagen 3*/
+object-position: 50% 30%;
+}
+
+
+
+.testimony__arrow{
+cursor: pointer;
+    width: 90%;
+}
+
+/*SECTION 5 Questions ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+.questions{
+    text-align: center;
+}
+
+.questions__paragraph{
+    padding-bottom: 15px;
+}
+
+.questions__container{
+    display: grid;
+    gap: 2em;
+    padding-top: 25px;
+}
+
+.questions__padding{
+    padding: 0;
+    transition: padding .2s;
+    border: 1px solid #5454d4;
+    border-radius: 6px;
+}
+
+.questions__padding--add{
+    padding-bottom: 30px;
+}
+
+.questions__answer{
+    padding: 0 30px 0;      /*arriba - derecha izquierda - abajo*/
+    overflow: hidden;
+}
+
+.questions__title{
+    display: flex;
+    font-size: 20px;
+    padding: 30px 0 30px;
+    cursor: pointer;
+    color: var(--color-title);
+    justify-content: space-between;   /*separar entre esquinas los items*/
+}
+
+.questions__arrow{
+    border-radius: 50%;
+    background-color: var(--color-title);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    transition: trasform .3s;
+}
+
+.questions__arrow--rotate{
+    transform: rotate(180deg);     /*180 grados para invertir las flechas, clase que se activara mediante js*/
+}
+
+.questions__show{
+    text-align: left; 
+    height: 0;
+    transition: height .3s;
+}
+
+.questions__img{
+    display: block;
+}
+
+.questions__offer{
+    margin-top: 50px;
+}
+
+.questions__copy{
+    width: 60%;
+    margin: 0 auto;        /*0 auto para centrar el width*/
+    margin-bottom: 30px;   /*se coloca de ultimo para que el margin auto no interfiera*/
+}
+
+/*SECTION FOOTER ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+footer{
+    background-color: #1d293f;
+}
+
+.footer__title{
+    font-weight: 300;    /*font-weight es el grosor de la letra*/
+    font-size: 2rem;     /*tamaño de la letra*/
+    margin-bottom: 30px;
+}
+
+.footer__title, .footer__newsletter{
+    color: white;
+}
+
+.footer__container{
+    display: flex;       /*flex para colocar los elementos uno al lado del otro*/
+    justify-content: space-between;   /*para que se peguen a las esquinas*/
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+.nav--footer{
+    padding-bottom: 20px;
+    display: grid;    /*posiciona los elementos hijos uno debajo del otro*/
+    gap: 1em;
+    grid-auto-flow: row;
+    height: 100%;
+}
+
+.nav__link--footer{   /*links del footer*/
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;   /*en caso de que los enlaces ya no quepan se desborden uno debajo de otro*/
+}
+
+.footer__inputs{
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.footer__input{          /*este es el email*/
+    background-color: white;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+}
+
+.footer__submit{
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #2091f9;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footer__copy{
+   --padding-container: 30px 0;
+   text-align: center;
+   color: white;
+}
+
+.footer__copyright{
+    font-weight: 300;
+}
+
+.footer__icons{
+    margin-bottom: 10px;
+}
+
+.footer__img{
+    width: 30px;
+}
+
+
+
+
+
+
+/*empezamos a adaptar a dispositivos mobiles*/
+/*MEDIA QUERIES ↓↓↓ ---------------------------------------------------------------------------------------------*/
+
+@media (max-width:800px){    
+    .nav__menu{
+        display: block;      /*para que aparesca el menu hamburguesa*/
+    }
+
+    .nav__link--menu{
+        position: fixed;     /*. todo el espacio del elemento desaparece por lo que se puede superponer sobre otros elementos*/
+        background-color:black;
+        top: 0;              /*top y left en 0 posiciona al elemento en la partie superior izquierda*/
+        left: 0;
+        height: 100%;        /*mediante el height y width al 100% el background-color se reparte en toda la pantalla*/
+        width: 100%;
+        display: flex;
+        flex-direction: column;          /*mediante el displey flex se organice en columnas*/
+        justify-content: space-evenly;   /*evenly para que reparta el espacio vertical equitatiamente*/  
+        align-items: center;             /*para centrar horizontalmente*/
+        z-index: 100;                    /*para que se sobreponga a todo el contenido*/ 
+        opacity: 0;                      /*opacidad 0 para que se oculte*/ 
+        pointer-events: none; 
+        transition: .7s opacity;
+    }
+
+    .nav__link--show{   /*clase nueva creada para agregarla a el elemnto menu hamburguesa mediante javascript*/
+        --show:block;   /*para mostrar el icono de cerrar devido a que ya creamos la variable en el icono de close display: var(--show, none); dandole el valor de none para que se oculte y a los 800 px o menos de pantalla aparenca mediante el valor de block*/
+        opacity:1 ;
+        pointer-events: unset;  /*unset para que vulevan al valor original*/
+    }
+
+    .nav__close{
+        position: absolute;
+        top: 35px;
+        right: 37px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .hero__title{
+        font-size: 2.5rem;
+    }
+
+    .about__main{
+        gap: 2em;
+    }
+
+    .about__icons:last-of-type{   /*de todos los elementos about__icons selecionamos el ultimo de su tipo*/
+        grid-column: 1/-1;        /*centra el lemento al ocupar todo el espacio*/
+    }
+
+    .knowledge__container{
+        grid-template-columns: 1fr;  /*el contenedor solo este en una sola columna*/
+        grid-template-rows: max-content 1fr;   /*dos fila la primera que contenga el maximo contenido y la segunda lo que sobre*/
+        gap: 3em;
+    }
+
+    .knowledge__picture{
+        grid-row: 1/2;    /*ubicamos de tal manera que la imagen quede primero*/
+        justify-self: center;   /*centrar la imagen horizontalmente*/
+        margin-left: 0;
+    }
+
+    .testimony__container{
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .testimony__body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .testimony__img{
+        width: 220px;
+        height: 220px;
+    }
+
+    .questions__copy{
+        width: 100%;
+    }
+
+    .footer__container{
+        flex-wrap: wrap;  /*si en algun punto lso elementos no caben en la misma linea se desborden en otra linea*/
+    }
+
+    .nav--footer{
+        width: 100%;
+        justify-items: center; 
+    }
+    
+    .nav__link--footer{
+        width: 100%;
+        justify-content: space-evenly; /*separar los contenidos en el espacio equitativamente*/
+        padding: 0;
+    }
+
+    .footer__form{
+        width: 100%;
+    }
+
+    .footer__input{
+        flex: 1;      /*para que ocupe todo el espacio sobrante*/
+    }
+
+}
+
+
+
+
+@media(max-width:600px){
+
+    .hero__title{
+        font-size: 2rem;
+    }
+
+    .hero__paragraph{
+        font-size: 1rem;
+    }
+
+    .subtitle{
+        font-size: 1.8rem;
+    }
+
+    .knowledge__container{
+        gap: 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .knowledge__picture{
+        width: 300px;
+        height: 300px;
+    }
+
+    .price__table{
+        width: 90%;
+        padding-right: 0;
+        margin-left: 15px;
+    }
+
+    .plan__price{
+        font-size: 1.8rem;
+    }
+
+    .price__cta{
+    width: 100%;
+    padding: 15px 50px;
+    }
+
+    .testimony__container{
+        padding: 60px 0;
+    }
+
+    .testimony__course{
+        margin-top: 10px;
+    }
+
+    .questions{
+        padding: 70px 0;
+    }
+
+    .questions__container{
+        text-align: left;
+    }
+
+    .questions__title{
+        font-size: 1.1rem;
+    }
+
+    .footer__container{
+        padding: 60px 0;
+    }
+
+    .footer__title{
+        margin-bottom: 5px;
+    }
+
+    .footer__newsletter{
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .nav__link--footer{
+        gap: 0; 
+        margin-right: 0;
+    }
+
+    .footer__copyright{
+        font-size: 1rem;
+    }
+
+    .footer__input{
+        height: 40px;
+        width: 50px;
+    }
+
+    .footer__submit{
+        height: 40px;
+    }
+
+}
+
+
+

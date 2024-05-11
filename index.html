@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viajar Cartagena</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />  <!-- los link para enlazar el favicon y los estilos css -->
+    <link rel="stylesheet" href="./css/normalize.css" /> <!-- normalize ayuda a que las paginas se vean iguales en diferentes navegadores para que no halla problemas-->
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+
+  <body>
+    <!-- SECTION 0 ↓↓↓ Header-->
+    <header class="hero">      <!-- header todo lo que contiene el encabezado-->
+      <nav class="nav container">     <!-- nav Seccion con links de navegacion-->
+        <nav class="nav__logo">
+          <h2 class="nav__title">Viajar a Cartagena</h2>
+        </nav>
+            <ul class="nav__link nav__link--menu">    <!-- ul  lista no ordenada-->
+                <li class="nav__items">              <!-- li  elementos de una lista-->
+                    <a href="" class="nav__links">Inicio</a>   <!-- a es un elemento ancla para un iperenlace-->
+                </li>
+                <li class="nav__items">
+                    <a href="" class="nav__links">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="" class="nav__links">Contacto</a>
+                </li>
+                <li class="nav__items">
+                    <a href="" class="nav__links">Registrarse </a>
+                </li>
+                <img src="./images/close.svg" class="nav__close"> <!-- icono de cierre del menu (contraparte del menu amburguesa)-->
+            </ul>
+            <div class="nav__menu">
+                <img src="./images/menu.svg" class="nav__img">  <!-- icono de menu hamburguesa-->
+            </div>
+      </nav>
+
+      <section class="hero__container container">    <!-- section representa una seccion generica en un documento-->  
+        <h1 class="hero__title">¡Bienvenido a Viajar Cartagena!</h1>
+        <p class="hero__paragraph">En Viajar Cartagena, te llevamos en un viaje virtual a través de los lugares más emblemáticos, los rincones ocultos y las experiencias inolvidables que esta joya caribeña tiene para ofrecer</p>
+        <a href="#" class="cta">Comienza ahóra</a>
+      </section>
+    </header>
+
+
+    <main> 
+      <!-- SECTION 1 ↓↓↓ about-->
+      <section class="container about">
+        <h2 class="subtitle">Lugares destacados</h2>
+        <p class="abot__paragraph">Dale una mirada a algunos de los sitios mas destacados de Cartagena de indias</p>
+          <div class="about__main">
+            <article class="about__icons">
+              <img src="./images/bebida_coco.png" class="about__icon">
+              <h3 class="about__title">Playa blanca</h3>
+              <p class="about__paragraph">Playa blanca, una de las mejores playas que podemos encontrar en cartagena de indias, aguas cristalinas, arena blanca y una gran vista al mar</p>
+            </article>
+
+            <article class="about__icons">
+              <img src="./images/maleta.png" class="about__icon">
+              <h3 class="about__title">Castillo de san felipe</h3>
+              <p class="about__paragraph">Fortaleza de la época colonial española construida sobre el Cerro de San Lázaro para proteger la única entrada por tierra a Cartagena de Indias.</p>
+            </article>
+
+            <article class="about__icons">
+              <img src="./images/sandia.png" class="about__icon">
+              <h3 class="about__title">Aviario</h3>
+              <p class="about__paragraph">La naturalza de Colombia, muchos loros coloridos, pavos reales, flamencos y otras especies que viven en su hábitat natural.</p>
+            </article>
+          </div>
+      </section>
+
+      <!-- SECTION 2 ↓↓↓ knowledge-->
+      <section class="knowledge"> 
+        <div class="knowledge__container container">
+          <div class="knowledge__text">
+            <h2 class="subtitle">Playa Blanca</h2>
+            <p class="knowledge__paragraph">Playa Blanca está ubicada justamente al sur de Cartagena, y específicamente en la isla llamada Barú. Es una de las playas más lindas por su arena blanca y el agua tan clara, y a la vez es una de las playas de esta calidad más accesibles del país.
+
+              Conocer Playa Blanca es una de las mejores decisiones que puedes tomar si te encuentras de visita en Cartagena, su hermoso paisaje, y los servicios que se ofrecen te harán vivir una experiencia de otro mundo.
+              
+              </p>
+            <a href="#" class="cta">Entra ahóra</a>
+          </div>
+
+          <figure class="knowledge__picture">
+            <img src="./images/Playablanca.PNG" class="knowledge__img">
+          </figure>
+        </div>
+      </section>
+
+      <section class="price container"> <!-- SECTION 3 ↓↓↓ price-->
+        <h2 class="subtitle">Obten el tour perfecto</h2>
+
+        <div class="price__table">
+
+          <div class="price__element">
+            <p class="price__name">Nivel 1</p>
+            <h3 class="plan__price">$20 USD</h3>
+
+            <div class="price__items">
+              <p class="price__features">1 Día</p>
+              <p class="price__features">3 Comidas</p>
+              <p class="price__features">Playa Blanca Barú</p>
+            </div>
+
+            <a href="#" class="price__cta">Empieza ahóra</a>
+          </div>
+
+
+          <div class="price__element price__element--best">
+            <p class="price__name">Nivel 2</p>
+            <h3 class="plan__price">$40 USD</h3>
+
+            <div class="price__items">
+              <p class="price__features">2 Días</p>
+              <p class="price__features">6 comida</p>
+              <p class="price__features">+ Islas del Rosario</p>
+            </div>
+            <a href="#" class="price__cta">Empieza ahóra</a>
+          </div>
+
+
+          <div class="price__element">
+            <p class="price__name">Nivel 3</p>
+            <h3 class="plan__price">$50 USD</h3>
+
+            <div class="price__items">
+              <p class="price__features">3 Día</p>
+              <p class="price__features">9 Comidas</p>
+              <p class="price__features">+ Aviario y Oceanario</p>
+            </div>
+
+            <a href="#" class="price__cta">Empieza ahóra</a>
+          </div>
+
+
+        </div>
+      </section>
+
+      <section class="testimony"> <!-- SECTION 4 ↓↓↓ testimony-->
+        <div class="testimony__container container">
+          <img src="./images/leftarrow.svg" class="testimony__arrow" id="before">
+
+          <section class="testimony__body testimony__body--show" data-id="1">
+            <div class="testimony__texts">
+              <h2 class="subtitle">Mi nombre es Yuliana Walker, <samp class="testimony__course">Estudiante de Derecho.</samp></h2>
+              <p class="testimony__review">¡Increíble experiencia! Nunca olvidaré las playas de Cartagena gracias a este tour. El servicio fue impecable, desde la recogida en el hotel hasta cada detalle en el recorrido. ¡Gracias por hacer de este viaje una aventura inolvidable!</p>
+            </div>
+            <figure class="testimony__picture">
+              <img src="./images/face1.jpg" class="testimony__img">
+            </figure>
+          </section>
+           
+          <section class="testimony__body" data-id="2">
+            <div class="testimony__texts">
+              <h2 class="subtitle">Mi nombre es Camila Abbey, <samp class="testimony__course">Fotografa de aves.</samp></h2>
+              <p class="testimony__review">¡Definitivamente recomendaré este tour a todos mis amigos y familiares! Fue una manera perfecta de explorar las playas y sitios turísticos de Cartagena. El guía fue muy amable y conocedor, y el itinerario fue perfectamente planificado. ¡Gracias por una experiencia maravillosa!                .</p>
+            </div>
+            <figure class="testimony__picture">
+              <img src="./images/face2.jpg" class="testimony__img">
+            </figure>
+          </section>
+        
+          <section class="testimony__body" data-id="3">
+            <div class="testimony__texts">
+              <h2 class="subtitle">Mi nombre es Lucy Campbell, <samp class="testimony__course">Guia turística.</samp></h2>
+              <p class="testimony__review">¡Gracias por un día maravilloso en Cartagena! Disfrutamos cada momento del tour, especialmente las hermosas playas y los lugares pintorescos que visitamos. El equipo fue muy atento y profesional, ¡realmente hicieron que nuestro viaje fuera especial!</p>
+            </div>
+            <figure class="testimony__picture">
+              <img src="./images/face3.jpg"  class="testimony__img testimony_img3">
+            </figure>
+          </section>
+
+          <section class="testimony__body" data-id="4">
+            <div class="testimony__texts">
+              <h2 class="subtitle">Mi nombre es Scarlet Maxwell, <samp class="testimony__course">Empresaria.</samp></h2>
+              <p class="testimony__review">"No podríamos estar más felices con este tour. Desde el momento en que reservamos hasta el final de la excursión, todo fue perfecto. Las playas de Cartagena son espectaculares y el servicio que recibimos fue excepcional. ¡Gracias por una experiencia inolvidable en Colombia!"
+
+
+
+                .</p>
+            </div>
+            <figure class="testimony__picture">
+              <img src="./images/face4.jpg"  class="testimony__img testimony_img4">
+            </figure>
+          </section>
+          
+          <img src="./images/rightarrow.svg" class="testimony__arrow" id="next">
+        </div>
+      </section>
+
+      <section class="questions container"> <!-- SECTION 5 ↓↓↓ questions-->
+        <h2 class="subtitle">Preguntas frecuentes</h2>
+        <p class="questions__paragraph">En esta sección encontraras respuestas a las preguntas mas frecuentes</p>
+
+        <section class="questions__container">
+          <article class="questions__padding">
+            <div class="questions__answer">
+              <h3 class="questions__title">¿Sitios Recreacionales?
+                <span class="questions__arrow">
+                  <img src="./images/arrow.svg" class="questions__img">
+                </span>
+              </h3>
+              <p class="questions__show">Cartagena de Indias, Colombia, es un destino turístico lleno de sitios recreacionales y lugares de interés para visitar. Algunos de los sitios recreacionales más destacados incluyen: Palyas, centro historico, castillo de san felipe, museos, islas del rosario, paseo en coche de caballos, cerro la popa, y mucho mas</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="questions__container">
+          <article class="questions__padding">
+            <div class="questions__answer">
+              <h3 class="questions__title">¿Cuanto cuesta?
+                <span class="questions__arrow">
+                  <img src="./images/arrow.svg" class="questions__img">
+                </span>
+              </h3>
+              <p class="questions__show">Puedes viajar por cuenta propia a cualquier sitio en Cartagena. Ademas ofrecemos tours de 3 niceles donde puedes disfrutas de una gran experiencia (Nivel 1: 20 USD, Nivel 2: 40 USD, Nivel 3: 50 USD)</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="questions__container">
+          <article class="questions__padding">
+            <div class="questions__answer">
+              <h3 class="questions__title">¿En que momento viajar?
+                <span class="questions__arrow">
+                  <img src="./images/arrow.svg" class="questions__img">
+                </span>
+              </h3>
+              <p class="questions__show">La mejor época para viajar a Cartagena depende de tus preferencias personales y de qué tipo de actividades quieras realizar. Si prefieres evitar la lluvia y disfrutar de días soleados en la playa, la temporada seca puede ser la mejor opción. Sin embargo, si estás buscando tarifas más económicas y no te importa la posibilidad de lluvias ocasionales, la temporada de lluvias también puede ser una buena época para visitar.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="questions__offer">
+          <h2 class="subtitle">¿Estas listo para viajar?</h2>
+          <p class="questions__copy">Descubre la magia de Cartagena de Indias, donde el encanto colonial se combina con playas paradisíacas, una gastronomía exquisita y una energía vibrante. ¡Déjate cautivar por la belleza y la historia de esta joya del Caribe colombiano en cada rincón que explores!</p>
+          <a href="#" class="cta">Viaja ahóra</a>
+        </section>
+
+      </section>
+    </main>
+
+    <footer>  <!-- footer todo lo que contiene el final de la pagina-->
+      <section class="footer__container container">
+        <nav class="nav nav--footer">
+          <h2 class="footer__title">Viajar Cartagena</h2>
+
+          <ul class="nav__link nav__link--footer">
+            <li class="nav__items">              <!-- li  elementos de una lista-->
+              <a href="#" class="nav__links">Inicio</a>   <!-- a es un elemento ancla para un iperenlace-->
+          </li>
+          <li class="nav__items">
+              <a href="#" class="nav__links">Acerca de</a>
+          </li>
+          <li class="nav__items">
+              <a href="#" class="nav__links">Contacto</a>
+          </li>
+          <li class="nav__items">
+              <a href="#" class="nav__links">Blog</a>
+          </li>
+          </ul>
+
+        </nav>
+
+        <form class="footer__form" action="https://formspree.io/f/mbjerebl"
+        method="POST">     <!--action y method se sacaron de formspree.io para enviar emails sin necesidad de backends-->
+          <h2 class="footer__newsletter">separa un tour ya!</h2>
+          <div class="footer__inputs">
+            <input type="email" placeholder="Email:" class="footer__input" name="email">  <!-- input tipo email funciona con un textbox, el name se saco de formspree.io para enviar correos sin backend--> 
+            <input type="submit" value="registrate" class="footer__submit">  <!-- input tipo submit funciona con un boton-->
+          </div>
+        </form>
+
+      </section>
+
+      <section class="footer__copy container">
+        <div class="footer__social">     
+          <a href="#" class="footer__icons">    
+            <img src="./images/facebook.svg" class="footer__img">
+            <img src="./images/twitter.svg" class="footer__img">
+            <img src="./images/instagram.svg" class="footer__img">
+            <img src="./images/youtube.svg" class="footer__img">
+          </a>
+        </div>
+
+        <h3 class="footer__copyright">Derechos reservados &copy; Kevin Raccini & Eder Vergara</h3>
+
+      </section>
+    </footer>
+    
+    <script src="./js/slider.js"></script>
+    <script src="./js/questions.js"></script>
+    <script src="./js/menu.js"></script>
+  </body>
+</html>
